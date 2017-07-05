@@ -1,0 +1,9 @@
+<launch>
+	<rosparam file="$(find hector_nav2)/params/controller.yaml" />
+	<node name="hector_nav2" pkg="hector_nav2" type="hector_nav2" launch-prefix="gdb -ex run --args" respawn="false" output="screen" args="$(find hector_nav)/waypoint/waypoint.txt"/>
+	<include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch"/>
+	<node name="reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+ 	<node pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+ 		<rosparam command="load" file="$(find hector_nav2)/config/simple_demo.yaml" />
+ 	</node>
+</launch>

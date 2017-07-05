@@ -1,0 +1,18 @@
+controller:
+    position:
+        type: hector_position_controller
+        xy:
+            k_p: 1.0
+            k_i: 0.0
+            k_d: 0.0
+            limit_output: 3
+        z:
+            k_p: 1.0
+            k_i: 0.0
+            k_d: 0.0
+            limit_output: 3
+        yaw:
+            k_p: 1.8
+            k_i: 0.0
+            k_d: 0.0
+            limit_output: 1.2

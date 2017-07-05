@@ -1,0 +1,6 @@
+<launch>
+	<rosparam file="$(find hector_nav2)/params/controller.yaml" />
+	<node name="hector_mcontrol" pkg="hector_mcontrol" type="hector_mcontrol" respawn="false" output="screen"/>
+	<include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch"/>
+	<node name="reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+</launch>
